@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.viewControllers = [topMoviesViewController]
         
         window = UIWindow(windowScene: windowScene)
-        window?.backgroundColor = .black
+        window?.backgroundColor = UIColor(named: "MainColor")
         window?.rootViewController = navigationController
         
         window?.makeKeyAndVisible()

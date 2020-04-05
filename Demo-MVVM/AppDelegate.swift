@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.viewControllers = [topMoviesViewController]
             
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.backgroundColor = .black
+            window?.backgroundColor = UIColor(named: "MainColor")
             window?.rootViewController = navigationController
         }
         

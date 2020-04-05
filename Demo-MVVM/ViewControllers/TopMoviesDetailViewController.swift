@@ -71,6 +71,7 @@ class TopMoviesDetailViewController: UIViewController {
         movieDescription.font = UIFont.systemFont(ofSize: 14.0)
         movieDescription.isEditable = false
         movieDescription.isScrollEnabled = false
+        movieDescription.sizeToFit()
     }
     
     func prepareMovieVotesAvarage() {

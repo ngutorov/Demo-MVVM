@@ -25,10 +25,14 @@ class TopMoviesViewController: UIViewController {
         fetchMovieList()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.separatorStyle = .singleLine
+    }
+    
     //MARK: - Prepare UI
     
     func prepareUI() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = UIColor(named: "MainColor")
         self.title = "Top Movies"
         
         addTableView()
@@ -42,8 +46,9 @@ class TopMoviesViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.refreshControl = refreshControl
-        tableView.separatorStyle = .singleLine
-        tableView.rowHeight = 99
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 140
+        tableView.backgroundColor = UIColor(named: "MainColor")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.showsVerticalScrollIndicator = false
         
