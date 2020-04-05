@@ -2,7 +2,9 @@
 
 ## Example of MVVM design pattern implementation.
 
-Demo app you can play with and see some advantages of MVVM under the hood. Very cool pattern with roots in MVC :thumbsup:
+Demo app you can play with and see some advantages of MVVM under the hood. This is just a very introductory look at the MVVM model. The idea behind MVVM pattern is that each View on the screen will be backed by a View Model that represents the data for the View. Reduce the size of your massive View Controller by moving logic into the View Model.
+
+> **Very cool pattern with roots in MVC!**
 
 ![ScreenShot_01](https://github.com/ngutorov/Demo-MVVM/blob/master/Demo/ScreenShot01.PNG)
 ![ScreenShot_02](https://github.com/ngutorov/Demo-MVVM/blob/master/Demo/ScreenShot02.PNG)
