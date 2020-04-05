@@ -1,4 +1,4 @@
-# Demo Model-View-ViewModel (MVVM)
+# Demo Model-View-View Model (MVVM)
 
 ## Example of MVVM pattern implementation.
 
