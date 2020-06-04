@@ -19,19 +19,9 @@ class TopMoviesViewCell: UITableViewCell {
             if let movie = movieItem {
                 self.titleLabel.text = movie.title ?? ""
                 self.overviewLabel.text = movie.overview ?? ""
-                self.picture.setImage(withImageId: movie.poster_path ?? "", placeholderImage: UIImage(named: "imagePlaceholder")!)
+                self.picture.setImage(withImageId: movie.posterPath ?? "", placeholderImage: UIImage(named: "imagePlaceholder")!)
                 self.picture.contentMode = .scaleAspectFill
             }
         }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
 }

@@ -84,26 +84,25 @@ extension Requestable {
         
         let task = URLSession.shared.dataTask(with: url,  completionHandler: { (data, response, error) in
             
-            DispatchQueue.main.async {
+            if let error = error {
+                print(error.localizedDescription)
                 
-                if let error = error {
-                    print(error.localizedDescription)
+            } else if let httpResponse = response as? HTTPURLResponse {
+                
+                if httpResponse.statusCode == 200 {
+                    let mappedModel = try? JSONDecoder().decode(MovieResponseModel.self, from: data!)
                     
-                } else if let httpResponse = response as? HTTPURLResponse {
-                    
-                    if httpResponse.statusCode == 200 {
-                        let mappedModel = try? JSONDecoder().decode(MovieResponseModel.self, from: data!)
-                        
-                        if mappedModel != nil {
+                    if mappedModel != nil {
+                        DispatchQueue.main.async {
                             callback(.success(data!))
-                            
-                        } else {
-                            callback(.failure(true))
                         }
                         
                     } else {
                         callback(.failure(true))
                     }
+                    
+                } else {
+                    callback(.failure(true))
                 }
             }
         })

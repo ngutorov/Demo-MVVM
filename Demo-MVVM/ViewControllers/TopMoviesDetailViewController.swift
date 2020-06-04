@@ -25,12 +25,12 @@ class TopMoviesDetailViewController: UIViewController {
         didSet {
             if let movie = movieItem {
                 self.movieTitle.text = movie.title ?? ""
-                self.moviePoster.setImage(withImageId: movie.poster_path ?? "", placeholderImage: UIImage(named: "imagePlaceholder")!)
+                self.moviePoster.setImage(withImageId: movie.posterPath ?? "", placeholderImage: UIImage(named: "imagePlaceholder")!)
                 self.movieDescription.text = movie.overview ?? ""
-                self.movieVotesAvarage.text = "Rating: \n\n★ \(movie.vote_average ?? 0)"
-                self.movieReleseDate.text = "Release date: \n\n\(movie.release_date ?? "")"
-                self.movieOriginalLanguage.text = "Original language: \n\n\(movie.original_language?.capitalized ?? "")"
-                self.movieBackDrop.setImage(withImageId: movie.backdrop_path ?? "", placeholderImage: UIImage(named: "imagePlaceholder")!)
+                self.movieVotesAvarage.text = "Rating: \n\n★ \(movie.voteAverage ?? 0)"
+                self.movieReleseDate.text = "Release date: \n\n\(movie.releaseDate ?? "")"
+                self.movieOriginalLanguage.text = "Original language: \n\n\(movie.originalLanguage?.capitalized ?? "")"
+                self.movieBackDrop.setImage(withImageId: movie.backdropPath ?? "", placeholderImage: UIImage(named: "imagePlaceholder")!)
             }
         }
     }

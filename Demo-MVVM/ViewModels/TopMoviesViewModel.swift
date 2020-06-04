@@ -32,7 +32,7 @@ class TopMoviesViewModel: TopMoviesViewModelProtocol {
                 
             case .success(let data):
                 let mappedModel = try? JSONDecoder().decode(MovieResponseModel.self, from: data) as MovieResponseModel
-                self.movies = mappedModel?.movie ?? []
+                self.movies = mappedModel?.movies ?? []
                 break
                 
             case .failure(let error):

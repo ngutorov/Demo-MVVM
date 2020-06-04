@@ -8,81 +8,81 @@
 
 import Foundation
 
-struct MovieResponseModel : Codable {
+struct MovieResponseModel: Codable {
     
     let page : Int?
-    let total_results : Int?
-    let total_pages : Int?
-    let movie : [Movie]?
+    let totalResults : Int?
+    let totalPages : Int?
+    let movies : [Movie]?
     
     enum CodingKeys: String, CodingKey {
         
-        case page = "page"
-        case total_results = "total_results"
-        case total_pages = "total_pages"
-        case movie = "results"
+        case page
+        case totalResults = "total_results"
+        case totalPages = "total_pages"
+        case movies = "results"
     }
     
     init(from decoder: Decoder) throws {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
         page = try values.decodeIfPresent(Int.self, forKey: .page)
-        total_results = try values.decodeIfPresent(Int.self, forKey: .total_results)
-        total_pages = try values.decodeIfPresent(Int.self, forKey: .total_pages)
-        movie = try values.decodeIfPresent([Movie].self, forKey: .movie)
+        totalResults = try values.decodeIfPresent(Int.self, forKey: .totalResults)
+        totalPages = try values.decodeIfPresent(Int.self, forKey: .totalPages)
+        movies = try values.decodeIfPresent([Movie].self, forKey: .movies)
     }
 }
 
 struct Movie : Codable {
     
-    let vote_count : Int?
+    let voteCount : Int?
     let id : Int?
     let video : Bool?
-    let vote_average : Double?
+    let voteAverage : Double?
     let title : String?
     let popularity : Double?
-    let poster_path : String?
-    let original_language : String?
-    let original_title : String?
-    let genre_ids : [Int]?
-    let backdrop_path : String?
+    let posterPath : String?
+    let originalLanguage : String?
+    let originalTitle : String?
+    let genreIds : [Int]?
+    let backdropPath : String?
     let adult : Bool?
     let overview : String?
-    let release_date : String?
+    let releaseDate : String?
     
     enum CodingKeys: String, CodingKey {
         
-        case vote_count = "vote_count"
-        case id = "id"
-        case video = "video"
-        case vote_average = "vote_average"
-        case title = "title"
-        case popularity = "popularity"
-        case poster_path = "poster_path"
-        case original_language = "original_language"
-        case original_title = "original_title"
-        case genre_ids = "genre_ids"
-        case backdrop_path = "backdrop_path"
-        case adult = "adult"
-        case overview = "overview"
-        case release_date = "release_date"
+        case voteCount = "vote_count"
+        case id
+        case video
+        case voteAverage = "vote_average"
+        case title
+        case popularity
+        case posterPath = "poster_path"
+        case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case genreIds = "genre_ids"
+        case backdropPath = "backdrop_path"
+        case adult
+        case overview
+        case releaseDate = "release_date"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        vote_count = try values.decodeIfPresent(Int.self, forKey: .vote_count)
+        voteCount = try values.decodeIfPresent(Int.self, forKey: .voteCount)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         video = try values.decodeIfPresent(Bool.self, forKey: .video)
-        vote_average = try values.decodeIfPresent(Double.self, forKey: .vote_average)
+        voteAverage = try values.decodeIfPresent(Double.self, forKey: .voteAverage)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         popularity = try values.decodeIfPresent(Double.self, forKey: .popularity)
-        poster_path = try values.decodeIfPresent(String.self, forKey: .poster_path)
-        original_language = try values.decodeIfPresent(String.self, forKey: .original_language)
-        original_title = try values.decodeIfPresent(String.self, forKey: .original_title)
-        genre_ids = try values.decodeIfPresent([Int].self, forKey: .genre_ids)
-        backdrop_path = try values.decodeIfPresent(String.self, forKey: .backdrop_path)
+        posterPath = try values.decodeIfPresent(String.self, forKey: .posterPath)
+        originalLanguage = try values.decodeIfPresent(String.self, forKey: .originalLanguage)
+        originalTitle = try values.decodeIfPresent(String.self, forKey: .originalTitle)
+        genreIds = try values.decodeIfPresent([Int].self, forKey: .genreIds)
+        backdropPath = try values.decodeIfPresent(String.self, forKey: .backdropPath)
         adult = try values.decodeIfPresent(Bool.self, forKey: .adult)
         overview = try values.decodeIfPresent(String.self, forKey: .overview)
-        release_date = try values.decodeIfPresent(String.self, forKey: .release_date)
+        releaseDate = try values.decodeIfPresent(String.self, forKey: .releaseDate)
     }
 }
