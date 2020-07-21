@@ -41,6 +41,7 @@ extension UIImageView {
     }
     
     func hideActivityIndicator() {
+        
         OperationQueue.main.addOperation({ () -> Void in
             self.activityIndicator.stopAnimating()
         })

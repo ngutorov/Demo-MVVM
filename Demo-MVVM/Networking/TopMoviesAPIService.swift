@@ -14,6 +14,7 @@ class TopMovieAPIService: NSObject, Requestable {
     public var movies: [Movie]?
     
     func fetchMovies(callback: @escaping Handler) {
+        
         request(method: .get, url: Domain.baseUrl() + APIEndpoint.movies) { (result) in
             
             callback(result)

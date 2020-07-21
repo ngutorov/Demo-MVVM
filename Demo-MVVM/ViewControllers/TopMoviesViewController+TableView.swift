@@ -13,6 +13,7 @@ import UIKit
 extension TopMoviesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return viewModel.movies?.count ?? 0
     }
     

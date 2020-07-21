@@ -33,7 +33,7 @@ extension TopMoviesViewController {
     }
     
     func prepareViewModelObserver() {
-        
+
         self.viewModel.movieDidChange = { (finished, error) in
             if !error {
                 self.reloadTableView()
@@ -42,6 +42,9 @@ extension TopMoviesViewController {
     }
     
     func reloadTableView() {
-        self.tableView.reloadData()
+        
+        DispatchQueue.main.async {
+           self.tableView.reloadData()
+        }
     }
 }

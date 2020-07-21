@@ -74,10 +74,10 @@ extension Method: CustomStringConvertible {
 }
 
 protocol Requestable {}
-
 extension Requestable {
     
     internal func request(method: Method, url: String, params: [NSString: Any]? = nil, callback: @escaping Handler) {
+        
         guard let url = URL(string: url) else {
             return
         }
